@@ -19,10 +19,10 @@ namespace ASP5Demo.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{c}")]
+        public string Get(int c)
         {
-            return "value";
+            return (((9* c)/5)+32).ToString();
         }
 
         // POST api/values
