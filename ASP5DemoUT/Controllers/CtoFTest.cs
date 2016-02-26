@@ -20,11 +20,21 @@ namespace ASP5DemoUT
         }
 
         [Theory]
-        [InlineData(100)]
-        public void CtoFTestCheck(int value)
+        [InlineData(0, 32)]
+        [InlineData(100, 212)]
+        public void CtoFTestCheckForTrue(int value, int result)
         {
             string f= _ctrl.Get(value);
-            Assert.True(f == "212");
+            Assert.True(f == result.ToString());
+        }
+
+        [Fact]
+        public void CtoFTestCheckForFalse()
+        {
+            int value = 100;
+            int result = 0;
+            string f = _ctrl.Get(value);
+            Assert.False(f == result.ToString());
         }
     }
 }
